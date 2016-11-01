@@ -1,4 +1,4 @@
-var http=require("http");
+// var http=require("http");
 var url = require('url');
 var fs=require("fs");
 http.createServer(function(request,response){
@@ -10,18 +10,25 @@ http.createServer(function(request,response){
     //然后就可以根据所得到的数据处理了
     var a=parseInt(arg.aa);
     var b=parseInt(arg.bb);
-
+ var html = '<html>'  
+        +'<head>'  
+        +'<title>nodejs</title>'  
+        +'</head>'  
+        +'<body>'  
+        +   'hello world! 1234'  
+        +'</body>'  
+        +'</html>';  
 
 	// 发送 HTTP 头部 
 	// HTTP 状态值: 200 : OK
 	// 内容类型: text/plain
 	response.writeHead(200,{'Content-Type':'text/plain'});
-
+res.write(html); 
 	// 发送响应数据 "Hello World"
 	// response.end('Hello World\n');
 	console.log(a*b);
-	// response.end(fs(./145630854135681.txt));
-	response.end(""+a*b);
+	response.end(fs(./145630854135681.txt));
+	// response.end(""+a*b);
 }).listen(8080);
 
 //终端打印如下信1
