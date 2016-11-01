@@ -27,7 +27,7 @@ res.write(html);
 	// 发送响应数据 "Hello World"
 	// response.end('Hello World\n');
 	console.log(a*b);
-	response.end(fs(./145630854135681.txt));
+	// response.end(fs(./145630854135681.txt));
 	// response.end(""+a*b);
 }).listen(8080);
 
